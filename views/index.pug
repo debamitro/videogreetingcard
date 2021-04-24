@@ -1,0 +1,25 @@
+html
+  head
+    title Video Greeting Card Sender
+  body
+      div(class='mainContent')
+      form(action='send', method='POST')
+        | Your name
+        input(name='m_from' id='m_from')
+        br
+        | Your email id
+        input(name='m_from_email' id='m_from_email')
+        br
+        | Recepient's name
+        input(name='m_to' id='m_to')
+        br
+        | Recepient's email id
+        input(name='m_to_email' id='m_to_email')
+        br
+        | YouTube video ID
+        input(name='m_video' id='m_video')
+        br
+        | Your message
+        textarea(name='m_message' id='m_message')
+        br
+        button(type='submit' id='m_submit') Send!

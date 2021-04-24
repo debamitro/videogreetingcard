@@ -1,0 +1,25 @@
+{
+  "name": "videogreetingcard",
+  "version": "1.0.0",
+  "description": "A way to send video greeting cards. Totally work in progress as of now.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/debamitro/videogreetingcard.git"
+  },
+  "author": "Debamitro Chakraborti",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/debamitro/videogreetingcard/issues"
+  },
+  "homepage": "https://github.com/debamitro/videogreetingcard#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "googleapis": "^67.0.0",
+    "nodemailer": "^6.4.18",
+    "pug": "^3.0.0"
+  }
+}
