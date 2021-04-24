@@ -1,7 +1,10 @@
+style
+  include style.css
 h1
   = 'Video Greeting Card for ' + m_to
 br
-= m_message
+div(class="msgdiv")
+  = m_message
 br
 a(href!=m_videolink target="_blank")
   img(src!=m_videoimgsrc)

@@ -50,21 +50,37 @@ app.post ('/send',  (req, res) => {
                          })
 })
 
+function generate_video_email_html (reqbody,
+                                    videolink,
+                                    videoimgsrc)
+{
+    return pug.renderFile ('views/email.pug',
+                           {
+                               basedir: 'views',
+                               m_message: reqbody.m_message,
+                               m_to: reqbody.m_to,
+                               m_from: reqbody.m_from,
+                               m_videolink: videolink,
+                               m_videoimgsrc: videoimgsrc
+                           })
+}
+
+function generate_video_email_text (reqbody, videolink)
+{
+    return 'Video Greeting Card for ' + reqbody.m_to + '\n\n' +
+        reqbody.m_message + '\n' +
+        videolink + '\n\n- ' + reqbody.m_from
+}
+
 function send_video_email (reqbody, videodata)
 {
+    const videolink = 'https://www.youtube.com/watch?v=' + videodata.id
     transport.sendMail({
         from: reqbody.m_from_email,
         to: reqbody.m_to_email,
         subject: "You got a greeting card!",
-        text: "Just a greeting card",
-        html: pug.renderFile ('views/email.pug',
-                              {
-                                  m_message: reqbody.m_message,
-                                  m_to: reqbody.m_to,
-                                  m_from: reqbody.m_from,
-                                  m_videolink: 'https://www.youtube.com/watch?v=' + videodata.id,
-                                  m_videoimgsrc :videodata.snippet.thumbnails.default.url,
-                              })
+        text: generate_video_email_text (reqbody, videolink),
+        html: generate_video_email_html (reqbody, videolink, videodata.snippet.thumbnails.default.url)
     }, (err, info) => {
         if (err)
         {
