@@ -1,25 +1,43 @@
 html
   head
     title Video Greeting Card Sender
+    link(rel='stylesheet' href='css/normalize.css')
+    link(rel='stylesheet' href='css/basscss.css')
+    link(rel='stylesheet' href='css/style.css')
+    script(src='js/email-template.js')
+    script(src='js/script.js')
   body
-      div(class='mainContent')
-      form(action='send', method='POST')
-        | Your name
-        input(name='m_from' id='m_from')
-        br
-        | Your email id
-        input(name='m_from_email' id='m_from_email')
-        br
-        | Recepient's name
-        input(name='m_to' id='m_to')
-        br
-        | Recepient's email id
-        input(name='m_to_email' id='m_to_email')
-        br
-        | YouTube video ID
-        input(name='m_video' id='m_video')
-        br
-        | Your message
-        textarea(name='m_message' id='m_message')
-        br
-        button(type='submit' id='m_submit') Send!
+    div(class='h1 center') Video Greeting Card Sender
+    div(class='clearfix mainContent mx-auto')
+        form(action='send', method='POST')
+          div(class='clearfix')
+            div(class='col col-6')
+              | Your name
+            div(class='col col-6')
+              input(name='m_from' id='m_from')
+          div(class='clearfix')
+            div(class='col col-6')
+              | Your email id
+            div(class='col col-6')
+              input(name='m_from_email' id='m_from_email')
+          div(class='clearfix')
+            div(class='col col-6')
+              | Recepient's name
+            div(class='col col-6')
+              input(name='m_to' id='m_to')
+          div(class='clearfix')
+            div(class='col col-6')
+              | Recepient's email id
+            div(class='col col-6')
+              input(name='m_to_email' id='m_to_email')
+          div(class='clearfix')
+            div(class='col col-6')
+              | YouTube video ID
+            div(class='col col-6')
+              input(name='m_video' id='m_video')
+          div(class='clearfix')
+            textarea(name='m_message' id='m_message') Your message
+          button(type='submit' id='m_submit') Send!
+    div(class='clearfix mainContent mx-auto')
+      div(class='h2 center') Preview
+      div(id='previewDiv' class='border')

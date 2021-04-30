@@ -56,7 +56,7 @@ function generate_video_email_html (reqbody,
 {
     return pug.renderFile ('views/email.pug',
                            {
-                               basedir: 'views',
+                               basedir: 'static',
                                m_message: reqbody.m_message,
                                m_to: reqbody.m_to,
                                m_from: reqbody.m_from,
