@@ -4,7 +4,7 @@
   "description": "A way to send video greeting cards. Totally work in progress as of now.",
   "main": "index.js",
   "scripts": {
-    "test": "env GOOGLE_API_KEY=\"`cat GOOGLE_API_KEY`\" node index.js"
+    "test": "env GOOGLE_API_KEY=\"`cat GOOGLE_API_KEY`\" MAILTRAP_USER=\"`cat MAILTRAP_USER`\" MAILTRAP_PASS=\"`cat MAILTRAP_PASS`\" node index.js"
   },
   "repository": {
     "type": "git",

@@ -6,13 +6,16 @@ if (app_port == null || app_port == "")
     app_port = 3000
 }
 
+const MAILTRAP_USER = process.env.MAILTRAP_USER // take it from the file MAILTRAP_USER
+const MAILTRAP_PASS = process.env.MAILTRAP_PASS // take it from the file MAILTRAP_PASS
+
 const nodemailer = require ('nodemailer')
 var transport = nodemailer.createTransport({
     host: "smtp.mailtrap.io",
     port: 2525,
     auth: {
-        user: "7047dbc17a1084",
-        pass: "0471ce0cc505e4"
+        user: MAILTRAP_USER,
+        pass: MAILTRAP_PASS
     }
 });
 
